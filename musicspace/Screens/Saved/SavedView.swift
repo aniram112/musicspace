@@ -22,7 +22,7 @@ struct SavedView: View {
                     record.padding(.top,30)
                     record.padding(.top,30)
                 }.padding(.top,20)
-                .scrollIndicators(.hidden)
+                //.scrollIndicators(.hidden)
             }
 
         }

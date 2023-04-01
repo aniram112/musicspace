@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E37A2A2A29D48367006657D5 /* PitchSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A2A2929D48367006657D5 /* PitchSlider.swift */; };
+		E394AFA029CB4ABF00B66BA3 /* AudioNodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E394AF9F29CB4ABF00B66BA3 /* AudioNodeView.swift */; };
+		E394AFA229CB4AF100B66BA3 /* Vector2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = E394AFA129CB4AF100B66BA3 /* Vector2D.swift */; };
+		E394AFA429CB4B1200B66BA3 /* AudioSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E394AFA329CB4B1200B66BA3 /* AudioSource.swift */; };
+		E394AFA629CB4B1D00B66BA3 /* AudioSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = E394AFA529CB4B1D00B66BA3 /* AudioSpace.swift */; };
+		E394AFA829CB4B3500B66BA3 /* AudioFileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E394AFA729CB4B3500B66BA3 /* AudioFileModel.swift */; };
+		E394AFAB29CB4C7C00B66BA3 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E394AFAA29CB4C7C00B66BA3 /* UIViewExtension.swift */; };
+		E394AFAD29CB4D9900B66BA3 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E394AFAC29CB4D9900B66BA3 /* UIImageExtension.swift */; };
+		E394AFAF29CB526D00B66BA3 /* AudioSpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E394AFAE29CB526D00B66BA3 /* AudioSpaceView.swift */; };
+		E394AFF529CF812D00B66BA3 /* style.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E394AFF429CF812D00B66BA3 /* style.mp3 */; };
+		E394AFF729CF846100B66BA3 /* empty.wav in Resources */ = {isa = PBXBuildFile; fileRef = E394AFF629CF846100B66BA3 /* empty.wav */; };
+		E394AFFD29CF897600B66BA3 /* blank_space.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E394AFFC29CF897600B66BA3 /* blank_space.mp3 */; };
+		E3AAFD1529D887F7000EEA60 /* SpeedSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AAFD1429D887F7000EEA60 /* SpeedSlider.swift */; };
+		E3AAFD1729D8CA61000EEA60 /* KICK.wav in Resources */ = {isa = PBXBuildFile; fileRef = E3AAFD1629D8CA61000EEA60 /* KICK.wav */; };
+		E3AAFD1929D8D04B000EEA60 /* synth.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3AAFD1829D8D04B000EEA60 /* synth.mp3 */; };
 		E3F83F5E294A231500891C14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F83F5D294A231500891C14 /* AppDelegate.swift */; };
 		E3F83F60294A231500891C14 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F83F5F294A231500891C14 /* SceneDelegate.swift */; };
 		E3F83F62294A231500891C14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F83F61294A231500891C14 /* ViewController.swift */; };
@@ -19,6 +34,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E37A2A2929D48367006657D5 /* PitchSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchSlider.swift; sourceTree = "<group>"; };
+		E394AF9F29CB4ABF00B66BA3 /* AudioNodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioNodeView.swift; sourceTree = "<group>"; };
+		E394AFA129CB4AF100B66BA3 /* Vector2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vector2D.swift; sourceTree = "<group>"; };
+		E394AFA329CB4B1200B66BA3 /* AudioSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSource.swift; sourceTree = "<group>"; };
+		E394AFA529CB4B1D00B66BA3 /* AudioSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSpace.swift; sourceTree = "<group>"; };
+		E394AFA729CB4B3500B66BA3 /* AudioFileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFileModel.swift; sourceTree = "<group>"; };
+		E394AFAA29CB4C7C00B66BA3 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		E394AFAC29CB4D9900B66BA3 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		E394AFAE29CB526D00B66BA3 /* AudioSpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSpaceView.swift; sourceTree = "<group>"; };
+		E394AFF429CF812D00B66BA3 /* style.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = style.mp3; sourceTree = "<group>"; };
+		E394AFF629CF846100B66BA3 /* empty.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = empty.wav; sourceTree = "<group>"; };
+		E394AFFC29CF897600B66BA3 /* blank_space.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = blank_space.mp3; sourceTree = "<group>"; };
+		E3AAFD1429D887F7000EEA60 /* SpeedSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedSlider.swift; sourceTree = "<group>"; };
+		E3AAFD1629D8CA61000EEA60 /* KICK.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = KICK.wav; sourceTree = "<group>"; };
+		E3AAFD1829D8D04B000EEA60 /* synth.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = synth.mp3; sourceTree = "<group>"; };
 		E3F83F5A294A231500891C14 /* musicspace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = musicspace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3F83F5D294A231500891C14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3F83F5F294A231500891C14 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +73,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E394AF9C29CB40DC00B66BA3 /* AudioSpace */ = {
+			isa = PBXGroup;
+			children = (
+				E394AF9E29CB40EF00B66BA3 /* View */,
+				E394AF9D29CB40EB00B66BA3 /* Logic */,
+			);
+			path = AudioSpace;
+			sourceTree = "<group>";
+		};
+		E394AF9D29CB40EB00B66BA3 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				E394AFA129CB4AF100B66BA3 /* Vector2D.swift */,
+				E394AFA329CB4B1200B66BA3 /* AudioSource.swift */,
+				E394AFA529CB4B1D00B66BA3 /* AudioSpace.swift */,
+				E394AFA729CB4B3500B66BA3 /* AudioFileModel.swift */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		E394AF9E29CB40EF00B66BA3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E394AF9F29CB4ABF00B66BA3 /* AudioNodeView.swift */,
+				E394AFAE29CB526D00B66BA3 /* AudioSpaceView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E394AFA929CB4C6400B66BA3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E394AFAA29CB4C7C00B66BA3 /* UIViewExtension.swift */,
+				E394AFAC29CB4D9900B66BA3 /* UIImageExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E394AFF129CF808300B66BA3 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				E3AAFD1829D8D04B000EEA60 /* synth.mp3 */,
+				E3AAFD1629D8CA61000EEA60 /* KICK.wav */,
+				E394AFFC29CF897600B66BA3 /* blank_space.mp3 */,
+				E394AFF629CF846100B66BA3 /* empty.wav */,
+				E394AFF429CF812D00B66BA3 /* style.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		E3AAFD1329D887E6000EEA60 /* Sliders */ = {
+			isa = PBXGroup;
+			children = (
+				E3AAFD1429D887F7000EEA60 /* SpeedSlider.swift */,
+				E37A2A2929D48367006657D5 /* PitchSlider.swift */,
+			);
+			path = Sliders;
+			sourceTree = "<group>";
+		};
 		E3F83F51294A231400891C14 = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +151,10 @@
 		E3F83F5C294A231500891C14 /* musicspace */ = {
 			isa = PBXGroup;
 			children = (
+				E3AAFD1329D887E6000EEA60 /* Sliders */,
+				E394AFF129CF808300B66BA3 /* Sounds */,
+				E394AFA929CB4C6400B66BA3 /* Extensions */,
+				E394AF9C29CB40DC00B66BA3 /* AudioSpace */,
 				E3F83F78294B218200891C14 /* Assets */,
 				E3F83F72294A243200891C14 /* Screens */,
 				E3F83F5D294A231500891C14 /* AppDelegate.swift */,
@@ -174,8 +267,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3AAFD1929D8D04B000EEA60 /* synth.mp3 in Resources */,
+				E3AAFD1729D8CA61000EEA60 /* KICK.wav in Resources */,
+				E394AFF729CF846100B66BA3 /* empty.wav in Resources */,
 				E3F83F6A294A231600891C14 /* LaunchScreen.storyboard in Resources */,
+				E394AFF529CF812D00B66BA3 /* style.mp3 in Resources */,
 				E3F83F67294A231600891C14 /* Assets.xcassets in Resources */,
+				E394AFFD29CF897600B66BA3 /* blank_space.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,13 +284,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3AAFD1529D887F7000EEA60 /* SpeedSlider.swift in Sources */,
+				E394AFAF29CB526D00B66BA3 /* AudioSpaceView.swift in Sources */,
 				E3F83F7C294B237400891C14 /* CollectionView.swift in Sources */,
+				E394AFA229CB4AF100B66BA3 /* Vector2D.swift in Sources */,
+				E394AFA829CB4B3500B66BA3 /* AudioFileModel.swift in Sources */,
+				E394AFA029CB4ABF00B66BA3 /* AudioNodeView.swift in Sources */,
 				E3F83F62294A231500891C14 /* ViewController.swift in Sources */,
 				E3F83F7A294B219400891C14 /* Colors.swift in Sources */,
+				E394AFA629CB4B1D00B66BA3 /* AudioSpace.swift in Sources */,
 				E3F83F80294B5C7D00891C14 /* SavedView.swift in Sources */,
 				E3F83F5E294A231500891C14 /* AppDelegate.swift in Sources */,
+				E394AFAD29CB4D9900B66BA3 /* UIImageExtension.swift in Sources */,
+				E37A2A2A29D48367006657D5 /* PitchSlider.swift in Sources */,
+				E394AFAB29CB4C7C00B66BA3 /* UIViewExtension.swift in Sources */,
 				E3F83F60294A231500891C14 /* SceneDelegate.swift in Sources */,
 				E3F83F77294A248B00891C14 /* MainScreenView.swift in Sources */,
+				E394AFA429CB4B1200B66BA3 /* AudioSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +447,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -367,6 +476,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

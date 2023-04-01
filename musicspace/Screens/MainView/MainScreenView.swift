@@ -29,7 +29,7 @@ struct MainScreenView: View {
                     slider(value: $slidervalueTwo).padding(.bottom,20)
                     slider(value: $slidervalueThree).padding(.bottom,20)
                     slider(value: $slidervalueFour).padding(.bottom,20)
-                }.scrollIndicators(.hidden).padding(.bottom,20)
+                }//.scrollIndicators(.hidden).padding(.bottom,20)
                 HStack(alignment: .center, spacing: 40) {
                     button(text: "Save", action: model.onSavedTap)
                     button(text: "Clear", action: {})

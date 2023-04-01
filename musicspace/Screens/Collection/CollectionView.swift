@@ -53,7 +53,7 @@ struct CollectionView: View {
                     .font(.system(size: 20, weight: .bold))
                     .foregroundColor(.white)
             }
-        }.scrollIndicators(.hidden)
+        }//.scrollIndicators(.hidden)
     }
     
     var grid: some View {
