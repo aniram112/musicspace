@@ -132,7 +132,6 @@ class AudioSource {
             try file.read(into: audioFileBuffer!, frameCount: audioFrameCount)
             player.play()
             player.scheduleBuffer(audioFileBuffer!, at: nil, options:.loops, completionHandler: nil)
-            
             //player.rate = 2
             //player.numberOfLoops = -1
             //player.play()

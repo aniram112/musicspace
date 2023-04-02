@@ -171,7 +171,7 @@ private extension PitchSlider {
         case let x where x > 0:
             return .white
         default:
-            return .lightGray
+            return .white
         }
     }
 }

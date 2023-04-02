@@ -191,7 +191,7 @@ class AudioSpaceView: UIView, AudioSpaceDelegate {
         if self.selectedNode?.prepareToRemove == true, let source = self.selectedNode?.source {
             self.space.removeSource(audioSource: source)
         }
-        self.selectedNode = nil
+        //self.selectedNode = nil
     }
 }
 
