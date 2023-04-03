@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class AudioSpaceView: UIView, AudioSpaceDelegate {
+    var delegate: Delegate?
     var contentView = UIView()
 
     var space: AudioSpace
@@ -104,12 +105,22 @@ class AudioSpaceView: UIView, AudioSpaceDelegate {
         self.space.delegate = self
     }
 
-    var selectedNode: AudioNodeView?
+    var selectedNode: AudioNodeView? {
+        didSet {
+            if selectedNode != nil{
+                delegate?.refreshSliders()
+            }
+        }
+    }
     weak var lastAddedNode: AudioNodeView?
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         self.selectedNode = nil
+        for node in self.audioSpaceNodes{
+            node.selected = false
+        }
+        var foundNode = false
 
         guard let touch = touches.first else {
             return
@@ -120,10 +131,17 @@ class AudioSpaceView: UIView, AudioSpaceDelegate {
         for node in self.audioSpaceNodes {
             if node.frame.contains(position) {
                 self.selectedNode = node
-                node.selected = true
+                self.selectedNode?.selected.toggle()
+                foundNode = true
                 break
             }
         }
+        if !foundNode {
+            for node in self.audioSpaceNodes{
+                node.selected = false
+            }
+        }
+
     }
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -187,7 +205,7 @@ class AudioSpaceView: UIView, AudioSpaceDelegate {
     }
 
     private func touchEndActions() {
-        self.selectedNode?.selected = false
+        //self.selectedNode?.selected = false
         if self.selectedNode?.prepareToRemove == true, let source = self.selectedNode?.source {
             self.space.removeSource(audioSource: source)
         }

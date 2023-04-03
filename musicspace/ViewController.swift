@@ -10,7 +10,10 @@ import SwiftUI
 import CoreMotion
 import AVFoundation
 
-class ViewController: UIViewController {
+protocol Delegate {
+    func refreshSliders()
+}
+class ViewController: UIViewController, Delegate {
     let audioSpace = AudioSpace()
     lazy var audioSpaceView = AudioSpaceView(space: self.audioSpace)
     lazy var addButton = UIButton()
@@ -69,6 +72,14 @@ class ViewController: UIViewController {
     
        
     }
+    
+    func refreshSliders() {
+        print("new node")
+        pitchSlider.currentValue = CGFloat(audioSpaceView.selectedNode?.source?.pitchControl.pitch ?? 0)/pitchSlider.sliderRange
+        speedSlider.value = audioSpaceView.selectedNode?.source?.speedControl.rate ?? 0
+        volumeSlider.value = audioSpaceView.selectedNode?.source?.player?.volume ?? 0
+    }
+    
     @objc func pitchSliderMoved() {
         audioSpaceView.selectedNode?.source?.pitchControl.pitch = Float(pitchSlider.currentValue * pitchSlider.sliderRange)
         //audioSource.pitchControl.pitch = Float(pitchSlider.currentValue * pitchSlider.sliderRange)
@@ -95,6 +106,7 @@ class ViewController: UIViewController {
     
     private func setupAudioSpace() {
         self.view.addSubview(self.audioSpaceView)
+        audioSpaceView.delegate = self
         self.audioSpaceView.translatesAutoresizingMaskIntoConstraints = false
         self.audioSpaceView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor,constant: 30).isActive = true
         self.audioSpaceView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 90).isActive = true

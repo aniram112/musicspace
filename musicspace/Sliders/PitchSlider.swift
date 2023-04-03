@@ -14,7 +14,13 @@ final public class PitchSlider: UIControl {
     
     public var sliderRange: CGFloat = 1
     
-    public var currentValue: CGFloat = 0.0
+    public var currentValue: CGFloat = 0.0 {
+        didSet {
+            sliderValue = currentValue + 0.5
+            sendActions(for: .valueChanged)
+        }
+        
+    }
     
     // MARK: - Private Properties
     

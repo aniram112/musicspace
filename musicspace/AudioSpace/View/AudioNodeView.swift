@@ -39,10 +39,10 @@ class AudioNodeView: UIView {
             self.backgroundLight.isHidden = !self.selected
             if selected {
                 self.contentView.transform = .init(scaleX: 1.12, y: 1.12)
-                //self.contentView.tintColor = .purple
+                self.contentView.backgroundColor = .purple
             } else {
                 self.contentView.transform = .identity
-                //self.contentView.tintColor = .white
+                self.contentView.backgroundColor = .white
             }
         }
     }

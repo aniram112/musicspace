@@ -33,7 +33,7 @@ struct AudioFileModel {
     }
     
     static var blank: AudioFileModel {
-        return AudioFileModel(name: "blank_space", file: .mp3, icon: UIImage(named: "icon_sound")!)
+        return AudioFileModel(name: "blank_space", file: .mp3, icon: UIImage(named: "icon_plane")!)
     }
     
     static var kick: AudioFileModel {
