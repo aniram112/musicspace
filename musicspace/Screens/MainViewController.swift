@@ -10,20 +10,26 @@ import SwiftUI
 import CoreMotion
 import AVFoundation
 
-protocol Delegate {
+protocol SlidersDelegate {
     func refreshSliders()
 }
-class ViewController: UIViewController, Delegate {
+
+
+
+class MainViewController: UIViewController, SlidersDelegate {
     let audioSpace = AudioSpace()
     lazy var audioSpaceView = AudioSpaceView(space: self.audioSpace)
-    lazy var addButton = UIButton()
-    lazy var saveButton = UIButton()
-    lazy var clearButton = UIButton()
-    lazy var buttonStack   = UIStackView()
-    lazy var sliderStack   = UIStackView()
-    lazy var pitchSlider = PitchSlider(sliderRange: 1400)
-    lazy var speedSlider = SpeedSlider()//SpeedSlider(sliderRange: 2)
-    lazy var volumeSlider = UISlider()
+    
+    let addButton = UIButton()
+    let saveButton = UIButton()
+    let clearButton = UIButton()
+    
+    let buttonStack   = UIStackView()
+    let sliderStack   = UIStackView()
+    
+    let pitchSlider = PitchSlider(sliderRange: 1600)
+    let speedSlider = SpeedSlider()
+    let volumeSlider = UISlider()
     
     let motion = CMHeadphoneMotionManager()
     var emptyPlayer: AVAudioPlayer?
@@ -46,7 +52,7 @@ class ViewController: UIViewController, Delegate {
         ),
         range: 0.5
     )
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(.background)
@@ -58,19 +64,37 @@ class ViewController: UIViewController, Delegate {
         pitchSlider.addTarget(self, action: #selector(pitchSliderMoved), for: .valueChanged)
         speedSlider.addTarget(self, action: #selector(speedSliderMoved), for: .valueChanged)
         volumeSlider.addTarget(self, action: #selector(volumeSliderMoved), for: .valueChanged)
-        audioSource.runAudio()
-        audioSource2.runAudio()
-        self.audioSpace.addSource(audioSource: audioSource)
-        self.audioSpace.addSource(audioSource: audioSource2)
-        
+        //audioSource.runAudio()
+        //audioSource2.runAudio()
+        //self.audioSpace.addSource(audioSource: audioSource)
+        //self.audioSpace.addSource(audioSource: audioSource2)
+        //addToSpace(file: AudioFileModel.style)
+        for audio in self.audioSpace.sources {
+            audio.runAudio()
+        }
         guard self.motion.isDeviceMotionAvailable else { return }
-
+        
        self.motion.startDeviceMotionUpdates(to: OperationQueue.main, withHandler: {[weak self] motion, error  in
            guard let motion = motion, error == nil else { return }
             self?.processData(motion)
        })
+        
+        
+    }
     
-       
+    func addToSpace(file: AudioFileModel){
+        let audioSource = AudioSource(
+            audio: file,
+            point: CGPoint(
+                x: CGFloat.random(in: 0.1..<0.9),
+                y: CGFloat.random(in: 0.1..<0.9)
+            ),
+            range: 0.5
+        )
+        self.audioSpace.addSource(audioSource: audioSource)
+        for audio in self.audioSpace.sources {
+            audio.runAudio()
+        }
     }
     
     func refreshSliders() {
@@ -80,26 +104,26 @@ class ViewController: UIViewController, Delegate {
         volumeSlider.value = audioSpaceView.selectedNode?.source?.player?.volume ?? 0
     }
     
-    @objc func pitchSliderMoved() {
+    @objc private func pitchSliderMoved() {
         audioSpaceView.selectedNode?.source?.pitchControl.pitch = Float(pitchSlider.currentValue * pitchSlider.sliderRange)
         //audioSource.pitchControl.pitch = Float(pitchSlider.currentValue * pitchSlider.sliderRange)
     }
     
-    @objc func speedSliderMoved() {
+    @objc private func speedSliderMoved() {
         //audioSource.speedControl.rate = speedSlider.value
         audioSpaceView.selectedNode?.source?.speedControl.rate = speedSlider.value
     }
     
-    @objc func volumeSliderMoved() {
-       //audioSource.player?.volume = volumeSlider.value
+    @objc private func volumeSliderMoved() {
+        //audioSource.player?.volume = volumeSlider.value
         audioSpaceView.selectedNode?.source?.player?.volume = volumeSlider.value
         
     }
     
-    func processData(_ data: CMDeviceMotion) {
+    private func processData(_ data: CMDeviceMotion) {
         let angle = CGFloat(data.attitude.yaw)
         self.audioSpace.yaw = angle
-
+        
         let deg = angle * CGFloat(180.0 / Double.pi)
         print(deg)
     }
@@ -169,7 +193,7 @@ class ViewController: UIViewController, Delegate {
         self.volumeSlider.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         self.volumeSlider.widthAnchor.constraint(equalTo: self.audioSpaceView.widthAnchor, constant: -18).isActive = true
         self.volumeSlider.heightAnchor.constraint(equalToConstant: 50).isActive = true
-
+        
     }
     
     private func setupButtonStack() {
@@ -206,21 +230,29 @@ class ViewController: UIViewController, Delegate {
     }
     
     
-    @objc func saveSpace() {
-        
+    @objc private func saveSpace() {
+        // TODO
     }
     
-    @objc func clearSpace() {
+    @objc private func clearSpace() {
         audioSpace.clearSources()
     }
     
     
-    @objc func openCollection() {
-        let collection = UIHostingController(rootView: CollectionView())
+    @objc private func openCollection() {
+        for audio in self.audioSpace.sources{
+            audio.stopAudio()
+        }
+        var colletionView = CollectionView()
+        colletionView.action = addToSpace(file:)
+        let collection = UIHostingController(rootView: colletionView)
         navigationController!.pushViewController(collection, animated: true)
     }
     
-    @objc func openSaved() {
+    @objc private func openSaved() {
+        for audio in self.audioSpace.sources{
+            audio.stopAudio()
+        }
         let saved = UIHostingController(rootView: SavedView())
         navigationController!.pushViewController(saved, animated: true)
     }

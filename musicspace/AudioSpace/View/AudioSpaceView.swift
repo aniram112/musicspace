@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class AudioSpaceView: UIView, AudioSpaceDelegate {
-    var delegate: Delegate?
+    var delegate: SlidersDelegate?
     var contentView = UIView()
 
     var space: AudioSpace

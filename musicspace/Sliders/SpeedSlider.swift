@@ -26,7 +26,7 @@ class SpeedSlider: UISlider {
     }
     
     private func setValue() {
-        thumbTextLabel.text =  String(format: "%0.2f", self.value)
+        thumbTextLabel.text =  String(format: "%0.2f", self.value) + "x"
     }
     
     override func awakeFromNib() {

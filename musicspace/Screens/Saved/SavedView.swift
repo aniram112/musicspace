@@ -7,6 +7,12 @@
 
 import SwiftUI
 
+struct SavedSpaceModel {
+    // TODO
+    
+}
+
+
 struct SavedView: View {
     var body: some View {
         ZStack{
@@ -48,6 +54,10 @@ struct SavedView: View {
             }
         }
         
+    }
+    
+    private func openSpace() {
+        // TODO
     }
 }
 

@@ -63,6 +63,7 @@ class AudioSource {
 
     func updateAudioResult() {
         self.player?.pan = Float(self.audioResult(v1: self.userVector, v2: self.getVectorOnCircle))
+        print("x:\(self.point.x) y:\(self.point.y)")
     }
 
     var getVectorOnCircle: Vector2D {
@@ -171,15 +172,15 @@ class AudioSource {
         var deg = angle * CGFloat(180.0 / Double.pi)
         deg = abs(deg)
 
-        let result: CGFloat
+        var result: CGFloat
         if deg > 90 {
             let value = (180 - deg) / 90
-            result = -1 + value
+            result = -1 + value - 0.07
         } else {
             let value = deg / 90
-            result = 1 - value
+            result = 1 - value + 0.07
         }
-
+        
         return self.normalizeAudioResultByVolume(result: result)
     }
 

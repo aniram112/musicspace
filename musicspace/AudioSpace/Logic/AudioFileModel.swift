@@ -9,7 +9,7 @@ import Foundation
 import AVFoundation
 import UIKit
 
-struct AudioFileModel {
+struct AudioFileModel: Hashable {
     enum File: String {
         case mp3
         case wav
@@ -43,4 +43,10 @@ struct AudioFileModel {
     static var synth: AudioFileModel {
         return AudioFileModel(name: "synth", file: .mp3, icon: UIImage(named: "icon_sound")!)
     }
+    
+    static var collection = [
+        "songs" : [AudioFileModel.style, AudioFileModel.blank],
+        "drums" : [AudioFileModel.kick],
+        "secret" : [AudioFileModel.synth],
+    ]
 }
