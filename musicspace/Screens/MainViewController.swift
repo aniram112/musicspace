@@ -89,6 +89,7 @@ class MainViewController: UIViewController, SlidersDelegate, SpaceDelegate {
         
     }
     
+    
     func addToSpace(file: AudioFileModel){
         let audioSource = AudioSource(
             audio: file,
@@ -183,7 +184,7 @@ class MainViewController: UIViewController, SlidersDelegate, SpaceDelegate {
         self.sliderStack.addArrangedSubview(volumeSlider)
         
         self.sliderStack.translatesAutoresizingMaskIntoConstraints = false
-        self.sliderStack.topAnchor.constraint(equalTo: self.addButton.bottomAnchor, constant: 40).isActive = true
+        self.sliderStack.topAnchor.constraint(equalTo: self.addButton.bottomAnchor, constant: 30).isActive = true
         self.sliderStack.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         
         self.pitchSlider.translatesAutoresizingMaskIntoConstraints = false
@@ -214,7 +215,7 @@ class MainViewController: UIViewController, SlidersDelegate, SpaceDelegate {
         self.buttonStack.addArrangedSubview(clearButton)
         
         self.buttonStack.translatesAutoresizingMaskIntoConstraints = false
-        self.buttonStack.topAnchor.constraint(equalTo: sliderStack.bottomAnchor, constant: 20).isActive = true
+        self.buttonStack.topAnchor.constraint(equalTo: sliderStack.bottomAnchor, constant: 15).isActive = true
         self.buttonStack.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         
         self.saveButton.translatesAutoresizingMaskIntoConstraints = false

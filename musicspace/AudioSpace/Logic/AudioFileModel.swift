@@ -37,7 +37,23 @@ struct AudioFileModel: Hashable {
     }
     
     static var kick: AudioFileModel {
-        return AudioFileModel(name: "KICK", file: .wav, icon: UIImage(named: "kick")!)
+        return AudioFileModel(name: "kick", file: .wav, icon: UIImage(named: "kick")!)
+    }
+    
+    static var snare: AudioFileModel {
+        return AudioFileModel(name: "snare", file: .wav, icon: UIImage(named: "snare")!)
+    }
+    
+    static var hat: AudioFileModel {
+        return AudioFileModel(name: "hi-hat", file: .wav, icon: UIImage(named: "hi-hat")!)
+    }
+    
+    static var cymbal: AudioFileModel {
+        return AudioFileModel(name: "cymbal", file: .wav, icon: UIImage(named: "hi-hat")!)
+    }
+    
+    static var clap: AudioFileModel {
+        return AudioFileModel(name: "clap", file: .wav, icon: UIImage(named: "clap")!)
     }
     
     static var synth: AudioFileModel {
@@ -45,8 +61,9 @@ struct AudioFileModel: Hashable {
     }
     
     static var collection = [
+        "drums" : [AudioFileModel.kick, AudioFileModel.snare, AudioFileModel.hat,
+                   AudioFileModel.clap, AudioFileModel.cymbal],
         "songs" : [AudioFileModel.style, AudioFileModel.blank],
-        "drums" : [AudioFileModel.kick],
         "secret" : [AudioFileModel.synth],
     ]
 }

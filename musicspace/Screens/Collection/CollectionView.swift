@@ -11,9 +11,9 @@ import AVFoundation
 struct CollectionView: View {
     //let data = (1...100).map { "Item \($0)" }
     @Environment(\.presentationMode) var presentationMode
-    @State var data = AudioFileModel.collection["songs"]
-    var categoriesArray = Array(AudioFileModel.collection.keys)
-    let columns = [GridItem(.adaptive(minimum: 80))]
+    @State var data = AudioFileModel.collection["drums"]
+    var categoriesArray = Array(AudioFileModel.collection.keys.sorted())
+    let columns = [GridItem(.adaptive(minimum: 70))]
     var action: (_ file: AudioFileModel) -> Void = {file in }
     @State var selectedFile: AudioFileModel?
     @State var audioSource =  AudioSource(
@@ -43,7 +43,7 @@ struct CollectionView: View {
     
     
     var categories: some View {
-        ScrollView(.horizontal){
+        ScrollView(.horizontal, showsIndicators: false){
             HStack(spacing: 20){
                 ForEach(categoriesArray, id: \.self) { item in
                     category(name: item)
@@ -62,8 +62,8 @@ struct CollectionView: View {
     }
     
     var grid: some View {
-        ScrollView {
-            LazyVGrid(columns: columns, spacing: 20) {
+        ScrollView(showsIndicators: false) {
+            LazyVGrid(columns: columns, spacing: 5) {
                 ForEach(data ?? [], id: \.self) { item in
                     CollectionCellView(file: item, selectedCell: self.$selectedFile)
                 }
@@ -99,7 +99,7 @@ struct CollectionView: View {
         )
         self.audioSource.runAudio()
         
-        let timer = Timer.scheduledTimer(withTimeInterval: 10.0, repeats: false) { timer in
+        let timer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false) { timer in
             print("Timer fired!")
             self.audioSource.stopAudio()
         }
