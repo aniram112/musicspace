@@ -15,7 +15,7 @@ class AudioSpaceView: UIView, AudioSpaceDelegate {
     var space: AudioSpace
 
     var backgroundView = UIView()
-    var userImageView = UIImageView(image: UIImage(named: "icon_user_2"))
+    var userImageView = UIImageView(image: UIImage(named: "profile-user")?.withRenderingMode(.alwaysTemplate))
     var audioSpaceNodes: [AudioNodeView] = []
 
     init(space: AudioSpace) {
@@ -91,7 +91,7 @@ class AudioSpaceView: UIView, AudioSpaceDelegate {
         self.backgroundView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor).isActive = true
         
         self.backgroundView.addSubview(self.userImageView)
-        self.userImageView.backgroundColor = .purple//UIColor(.background)
+        self.userImageView.backgroundColor = .white
         self.userImageView.layer.cornerRadius = 17
         self.userImageView.translatesAutoresizingMaskIntoConstraints = false
         self.userImageView.heightAnchor.constraint(equalToConstant: 34).isActive = true
@@ -99,6 +99,7 @@ class AudioSpaceView: UIView, AudioSpaceDelegate {
         self.userImageView.centerXAnchor.constraint(equalTo: self.backgroundView.centerXAnchor).isActive = true
         self.userImageView.centerYAnchor.constraint(equalTo: self.backgroundView.centerYAnchor).isActive = true
 
+        self.userImageView.tintColor = UIColor(.lightpurple)
         for source in self.space.sources {
             self.addAudioSource(audioSource: source)
         }

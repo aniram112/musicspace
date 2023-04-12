@@ -14,7 +14,7 @@ protocol AudioSpaceDelegate: AnyObject {
 }
 
 class AudioSpace {
-    private(set) var sources: [AudioSource] = []
+    var sources: [AudioSource] = []
     weak var delegate: AudioSpaceDelegate?
 
     var yaw: CGFloat = 0 {

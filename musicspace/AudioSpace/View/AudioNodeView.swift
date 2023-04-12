@@ -24,7 +24,7 @@ class AudioNodeView: UIView {
     
     var source: AudioSource? {
         didSet {
-            self.imageView.image = self.source?.audio.icon
+            self.imageView.image = self.source?.audio.icon.withRenderingMode(.alwaysTemplate)
         }
     }
 
@@ -39,10 +39,12 @@ class AudioNodeView: UIView {
             self.backgroundLight.isHidden = !self.selected
             if selected {
                 self.contentView.transform = .init(scaleX: 1.12, y: 1.12)
-                self.contentView.backgroundColor = .purple
+                self.contentView.layer.borderWidth = 3
+                self.contentView.layer.borderColor = UIColor(.accent).cgColor
             } else {
                 self.contentView.transform = .identity
-                self.contentView.backgroundColor = .white
+                self.contentView.layer.borderWidth = 0
+                //self.contentView.backgroundColor = UIColor(.lightpurple)
             }
         }
     }
@@ -65,7 +67,7 @@ class AudioNodeView: UIView {
         self.addSubview(self.frameView)
         self.addSubview(self.contentView)
 
-        self.contentView.backgroundColor = .white
+        self.contentView.backgroundColor = UIColor(.lightpurple)
         self.contentView.layer.cornerRadius = 25
         self.contentView.layer.masksToBounds = true
 
@@ -82,12 +84,15 @@ class AudioNodeView: UIView {
         self.contentView.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0).isActive = true
         self.contentView.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0).isActive = true
         
+        
         self.contentView.addSubview(self.imageView)
+        self.imageView.tintColor = .white
         self.imageView.translatesAutoresizingMaskIntoConstraints = false
-        self.imageView.heightAnchor.constraint(equalToConstant: 36).isActive = true
-        self.imageView.widthAnchor.constraint(equalToConstant: 36).isActive = true
+        self.imageView.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        self.imageView.widthAnchor.constraint(equalToConstant: 30).isActive = true
         self.imageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 0).isActive = true
         self.imageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 0).isActive = true
+       
     }
 
     func playFallAnimation() {

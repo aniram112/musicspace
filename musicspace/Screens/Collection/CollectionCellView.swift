@@ -24,7 +24,7 @@ struct CollectionCellView: View {
                     .resizable()
                     .renderingMode(.template)
                     .foregroundColor(.white)
-                    .frame(width: 50, height: 50)
+                    .frame(width: 45, height: 45)
                     
             }
             Text(file.name).font(.system(size: 11)).foregroundColor(.white)

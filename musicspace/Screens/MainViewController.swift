@@ -14,12 +14,16 @@ protocol SlidersDelegate {
     func refreshSliders()
 }
 
+protocol SpaceDelegate {
+    func setSpace(newSources: [AudioSource])
+}
 
 
-class MainViewController: UIViewController, SlidersDelegate {
-    let audioSpace = AudioSpace()
+class MainViewController: UIViewController, SlidersDelegate, SpaceDelegate {
+    var audioSpace = AudioSpace()
     lazy var audioSpaceView = AudioSpaceView(space: self.audioSpace)
     
+    let savedButton = UIButton()
     let addButton = UIButton()
     let saveButton = UIButton()
     let clearButton = UIButton()
@@ -55,6 +59,9 @@ class MainViewController: UIViewController, SlidersDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bookmark.fill"), style: .plain, target: self, action: #selector(openSaved))
+        
+        //UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(openSaved))
         view.backgroundColor = UIColor(.background)
         setupAudioSpace()
         setupAddButton()
@@ -98,7 +105,7 @@ class MainViewController: UIViewController, SlidersDelegate {
     }
     
     func refreshSliders() {
-        print("new node")
+        //print("new node")
         pitchSlider.currentValue = CGFloat(audioSpaceView.selectedNode?.source?.pitchControl.pitch ?? 0)/pitchSlider.sliderRange
         speedSlider.value = audioSpaceView.selectedNode?.source?.speedControl.rate ?? 0
         volumeSlider.value = audioSpaceView.selectedNode?.source?.player?.volume ?? 0
@@ -133,7 +140,7 @@ class MainViewController: UIViewController, SlidersDelegate {
         audioSpaceView.delegate = self
         self.audioSpaceView.translatesAutoresizingMaskIntoConstraints = false
         self.audioSpaceView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor,constant: 30).isActive = true
-        self.audioSpaceView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 90).isActive = true
+        self.audioSpaceView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 100).isActive = true
         self.audioSpaceView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor,constant: -30).isActive = true
     }
     
@@ -176,7 +183,7 @@ class MainViewController: UIViewController, SlidersDelegate {
         self.sliderStack.addArrangedSubview(volumeSlider)
         
         self.sliderStack.translatesAutoresizingMaskIntoConstraints = false
-        self.sliderStack.topAnchor.constraint(equalTo: self.addButton.bottomAnchor, constant: 50).isActive = true
+        self.sliderStack.topAnchor.constraint(equalTo: self.addButton.bottomAnchor, constant: 40).isActive = true
         self.sliderStack.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         
         self.pitchSlider.translatesAutoresizingMaskIntoConstraints = false
@@ -207,7 +214,7 @@ class MainViewController: UIViewController, SlidersDelegate {
         self.buttonStack.addArrangedSubview(clearButton)
         
         self.buttonStack.translatesAutoresizingMaskIntoConstraints = false
-        self.buttonStack.topAnchor.constraint(equalTo: sliderStack.bottomAnchor, constant: 30).isActive = true
+        self.buttonStack.topAnchor.constraint(equalTo: sliderStack.bottomAnchor, constant: 20).isActive = true
         self.buttonStack.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         
         self.saveButton.translatesAutoresizingMaskIntoConstraints = false
@@ -231,11 +238,48 @@ class MainViewController: UIViewController, SlidersDelegate {
     
     
     @objc private func saveSpace() {
-        // TODO
+        let alert = UIAlertController(title: "Enter space name", message: "\n", preferredStyle: .alert)
+        alert.addTextField { (textField) in
+            textField.text = "new space"
+        }
+        //alert.view.addSubview(pickerFrame)
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(
+            UIAlertAction(
+                title: "OK",
+                style: .default,
+                handler: { (UIAlertAction) in
+                    guard let textField = alert.textFields?[0] else { return }
+                    print("Text field: \(textField.text)")
+                    // TODO
+                    let mytime = Date()
+                    let format = DateFormatter()
+                    format.timeStyle = .short
+                    format.dateStyle = .short
+                    format.dateFormat = "dd.MM.yyyy HH:mm"
+                    print(format.string(from: mytime))
+                    let newSpace = SavedSpaceModel(name: textField.text ?? "new space", sources: self.audioSpace.sources, date: format.string(from: mytime))
+                    Data.shared.spaces.append(newSpace)
+                    
+                }
+            )
+        )
+        
+        self.present(alert,animated: true, completion: nil )
+    }
+    
+    func setSpace(newSources: [AudioSource]) {
+        self.audioSpace.clearSources()
+        for s in newSources {
+            self.audioSpace.addSource(audioSource: s)
+            s.runAudio()
+        }
     }
     
     @objc private func clearSpace() {
         audioSpace.clearSources()
+        //openSaved()
     }
     
     
@@ -253,7 +297,9 @@ class MainViewController: UIViewController, SlidersDelegate {
         for audio in self.audioSpace.sources{
             audio.stopAudio()
         }
-        let saved = UIHostingController(rootView: SavedView())
+        var savedView = SavedView()
+        savedView.delegate = self
+        let saved = UIHostingController(rootView: savedView)
         navigationController!.pushViewController(saved, animated: true)
     }
     

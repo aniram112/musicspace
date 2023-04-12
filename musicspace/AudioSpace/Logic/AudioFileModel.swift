@@ -29,19 +29,19 @@ struct AudioFileModel: Hashable {
     var icon: UIImage
 
     static var style: AudioFileModel {
-        return AudioFileModel(name: "style", file: .mp3, icon: UIImage(named: "icon_sound")!)
+        return AudioFileModel(name: "style", file: .mp3, icon: UIImage(named: "microphone")!)
     }
     
     static var blank: AudioFileModel {
-        return AudioFileModel(name: "blank_space", file: .mp3, icon: UIImage(named: "icon_plane")!)
+        return AudioFileModel(name: "blank_space", file: .mp3, icon: UIImage(named: "microphone")!)
     }
     
     static var kick: AudioFileModel {
-        return AudioFileModel(name: "KICK", file: .wav, icon: UIImage(named: "icon_sound")!)
+        return AudioFileModel(name: "KICK", file: .wav, icon: UIImage(named: "kick")!)
     }
     
     static var synth: AudioFileModel {
-        return AudioFileModel(name: "synth", file: .mp3, icon: UIImage(named: "icon_sound")!)
+        return AudioFileModel(name: "synth", file: .mp3, icon: UIImage(named: "piano")!)
     }
     
     static var collection = [

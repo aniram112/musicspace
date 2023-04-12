@@ -63,7 +63,7 @@ class AudioSource {
 
     func updateAudioResult() {
         self.player?.pan = Float(self.audioResult(v1: self.userVector, v2: self.getVectorOnCircle))
-        print("x:\(self.point.x) y:\(self.point.y)")
+        //print("x:\(self.point.x) y:\(self.point.y)")
     }
 
     var getVectorOnCircle: Vector2D {

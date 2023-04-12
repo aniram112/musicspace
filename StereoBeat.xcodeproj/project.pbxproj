@@ -18,14 +18,15 @@
 		E394AFF529CF812D00B66BA3 /* style.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E394AFF429CF812D00B66BA3 /* style.mp3 */; };
 		E394AFF729CF846100B66BA3 /* empty.wav in Resources */ = {isa = PBXBuildFile; fileRef = E394AFF629CF846100B66BA3 /* empty.wav */; };
 		E394AFFD29CF897600B66BA3 /* blank_space.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E394AFFC29CF897600B66BA3 /* blank_space.mp3 */; };
-		E3AAFD1729D8CA61000EEA60 /* KICK.wav in Resources */ = {isa = PBXBuildFile; fileRef = E3AAFD1629D8CA61000EEA60 /* KICK.wav */; };
+		E3AAFD1729D8CA61000EEA60 /* kick_1.wav in Resources */ = {isa = PBXBuildFile; fileRef = E3AAFD1629D8CA61000EEA60 /* kick_1.wav */; };
 		E3AAFD1929D8D04B000EEA60 /* synth.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3AAFD1829D8D04B000EEA60 /* synth.mp3 */; };
 		E3AAFD1B29D9CCC4000EEA60 /* SpeedSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AAFD1A29D9CCC4000EEA60 /* SpeedSlider.swift */; };
 		E3BAC78729E15C1600BAFB12 /* CollectionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BAC78629E15C1600BAFB12 /* CollectionCellView.swift */; };
+		E3BAC7B229E4A0FB00BAFB12 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BAC7B129E4A0FB00BAFB12 /* Data.swift */; };
+		E3BAC7D029E6DBD700BAFB12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3BAC7CF29E6DBD700BAFB12 /* Assets.xcassets */; };
 		E3F83F5E294A231500891C14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F83F5D294A231500891C14 /* AppDelegate.swift */; };
 		E3F83F60294A231500891C14 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F83F5F294A231500891C14 /* SceneDelegate.swift */; };
 		E3F83F62294A231500891C14 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F83F61294A231500891C14 /* MainViewController.swift */; };
-		E3F83F67294A231600891C14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3F83F66294A231600891C14 /* Assets.xcassets */; };
 		E3F83F6A294A231600891C14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3F83F68294A231600891C14 /* LaunchScreen.storyboard */; };
 		E3F83F77294A248B00891C14 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F83F76294A248B00891C14 /* MainScreenView.swift */; };
 		E3F83F7A294B219400891C14 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F83F79294B219300891C14 /* Colors.swift */; };
@@ -45,15 +46,16 @@
 		E394AFF429CF812D00B66BA3 /* style.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = style.mp3; sourceTree = "<group>"; };
 		E394AFF629CF846100B66BA3 /* empty.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = empty.wav; sourceTree = "<group>"; };
 		E394AFFC29CF897600B66BA3 /* blank_space.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = blank_space.mp3; sourceTree = "<group>"; };
-		E3AAFD1629D8CA61000EEA60 /* KICK.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = KICK.wav; sourceTree = "<group>"; };
+		E3AAFD1629D8CA61000EEA60 /* kick_1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = kick_1.wav; sourceTree = "<group>"; };
 		E3AAFD1829D8D04B000EEA60 /* synth.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = synth.mp3; sourceTree = "<group>"; };
 		E3AAFD1A29D9CCC4000EEA60 /* SpeedSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedSlider.swift; sourceTree = "<group>"; };
 		E3BAC78629E15C1600BAFB12 /* CollectionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCellView.swift; sourceTree = "<group>"; };
+		E3BAC7B129E4A0FB00BAFB12 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		E3BAC7CF29E6DBD700BAFB12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = musicspace/Assets.xcassets; sourceTree = "<group>"; };
 		E3F83F5A294A231500891C14 /* musicspace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = musicspace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3F83F5D294A231500891C14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3F83F5F294A231500891C14 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E3F83F61294A231500891C14 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		E3F83F66294A231600891C14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3F83F69294A231600891C14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3F83F6B294A231600891C14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3F83F76294A248B00891C14 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			children = (
 				E394AFAC29CB4D9900B66BA3 /* UIImageExtension.swift */,
 				E3F83F79294B219300891C14 /* Colors.swift */,
+				E3BAC7B129E4A0FB00BAFB12 /* Data.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -115,7 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				E3AAFD1829D8D04B000EEA60 /* synth.mp3 */,
-				E3AAFD1629D8CA61000EEA60 /* KICK.wav */,
+				E3AAFD1629D8CA61000EEA60 /* kick_1.wav */,
 				E394AFFC29CF897600B66BA3 /* blank_space.mp3 */,
 				E394AFF629CF846100B66BA3 /* empty.wav */,
 				E394AFF429CF812D00B66BA3 /* style.mp3 */,
@@ -135,6 +138,7 @@
 		E3F83F51294A231400891C14 = {
 			isa = PBXGroup;
 			children = (
+				E3BAC7CF29E6DBD700BAFB12 /* Assets.xcassets */,
 				E3F83F5C294A231500891C14 /* musicspace */,
 				E3F83F5B294A231500891C14 /* Products */,
 			);
@@ -158,7 +162,6 @@
 				E3F83F72294A243200891C14 /* Screens */,
 				E3F83F5D294A231500891C14 /* AppDelegate.swift */,
 				E3F83F5F294A231500891C14 /* SceneDelegate.swift */,
-				E3F83F66294A231600891C14 /* Assets.xcassets */,
 				E3F83F68294A231600891C14 /* LaunchScreen.storyboard */,
 				E3F83F6B294A231600891C14 /* Info.plist */,
 			);
@@ -236,7 +239,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E3F83F55294A231400891C14 /* Build configuration list for PBXProject "musicspace" */;
+			buildConfigurationList = E3F83F55294A231400891C14 /* Build configuration list for PBXProject "StereoBeat" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -260,11 +263,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3AAFD1929D8D04B000EEA60 /* synth.mp3 in Resources */,
-				E3AAFD1729D8CA61000EEA60 /* KICK.wav in Resources */,
+				E3AAFD1729D8CA61000EEA60 /* kick_1.wav in Resources */,
 				E394AFF729CF846100B66BA3 /* empty.wav in Resources */,
 				E3F83F6A294A231600891C14 /* LaunchScreen.storyboard in Resources */,
+				E3BAC7D029E6DBD700BAFB12 /* Assets.xcassets in Resources */,
 				E394AFF529CF812D00B66BA3 /* style.mp3 in Resources */,
-				E3F83F67294A231600891C14 /* Assets.xcassets in Resources */,
 				E394AFFD29CF897600B66BA3 /* blank_space.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +286,7 @@
 				E394AFA829CB4B3500B66BA3 /* AudioFileModel.swift in Sources */,
 				E394AFA029CB4ABF00B66BA3 /* AudioNodeView.swift in Sources */,
 				E3F83F62294A231500891C14 /* MainViewController.swift in Sources */,
+				E3BAC7B229E4A0FB00BAFB12 /* Data.swift in Sources */,
 				E3F83F7A294B219400891C14 /* Colors.swift in Sources */,
 				E394AFA629CB4B1D00B66BA3 /* AudioSpace.swift in Sources */,
 				E3F83F80294B5C7D00891C14 /* SavedView.swift in Sources */,
@@ -434,6 +438,7 @@
 				DEVELOPMENT_TEAM = 399KRUQQZ6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = musicspace/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = StereoBeat;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -463,6 +468,7 @@
 				DEVELOPMENT_TEAM = 399KRUQQZ6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = musicspace/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = StereoBeat;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -485,7 +491,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E3F83F55294A231400891C14 /* Build configuration list for PBXProject "musicspace" */ = {
+		E3F83F55294A231400891C14 /* Build configuration list for PBXProject "StereoBeat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E3F83F6C294A231600891C14 /* Debug */,
