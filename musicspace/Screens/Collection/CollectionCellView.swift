@@ -27,9 +27,13 @@ struct CollectionCellView: View {
                     .frame(width: 45, height: 45)
                     
             }
-            Text(file.name).font(.system(size: 11)).foregroundColor(.white)
+            Text(getDisplayName(file.name)).font(.system(size: 11)).foregroundColor(.white)
         }.onTapGesture {
             selectedCell = file
         }
+    }
+    
+    func getDisplayName(_ name: String) -> String {
+        return String(name.split(separator: "/").last ?? "file")
     }
 }

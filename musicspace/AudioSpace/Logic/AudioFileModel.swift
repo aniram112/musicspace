@@ -37,33 +37,132 @@ struct AudioFileModel: Hashable {
     }
     
     static var kick: AudioFileModel {
-        return AudioFileModel(name: "kick", file: .wav, icon: UIImage(named: "kick")!)
+        return AudioFileModel(name: "Drums/kick", file: .wav, icon: UIImage(named: "kick")!)
     }
     
     static var snare: AudioFileModel {
-        return AudioFileModel(name: "snare", file: .wav, icon: UIImage(named: "snare")!)
+        return AudioFileModel(name: "Drums/snare", file: .wav, icon: UIImage(named: "snare")!)
     }
     
     static var hat: AudioFileModel {
-        return AudioFileModel(name: "hi-hat", file: .wav, icon: UIImage(named: "hi-hat")!)
+        return AudioFileModel(name: "Drums/hi-hat", file: .wav, icon: UIImage(named: "hi-hat")!)
     }
     
     static var cymbal: AudioFileModel {
-        return AudioFileModel(name: "cymbal", file: .wav, icon: UIImage(named: "hi-hat")!)
+        return AudioFileModel(name: "Drums/cymbal", file: .wav, icon: UIImage(named: "hi-hat")!)
     }
     
     static var clap: AudioFileModel {
-        return AudioFileModel(name: "clap", file: .wav, icon: UIImage(named: "clap")!)
+        return AudioFileModel(name: "Drums/clap", file: .wav, icon: UIImage(named: "clap")!)
     }
     
     static var synth: AudioFileModel {
         return AudioFileModel(name: "synth", file: .mp3, icon: UIImage(named: "piano")!)
     }
     
+    
+    static var xylo: AudioFileModel {
+        return AudioFileModel(name: "Ambient/xylo", file: .wav, icon: UIImage(named: "xylophone")!)
+    }
+    
+    static var woodblock: AudioFileModel {
+        return AudioFileModel(name: "Ambient/woodblock", file: .wav, icon: UIImage(named: "woodblock")!)
+    }
+    
+    static var stringReverse: AudioFileModel {
+        return AudioFileModel(name: "Ambient/string reverse", file: .wav, icon: UIImage(named: "piano")!)
+    }
+    
+    static var paradise: AudioFileModel {
+        return AudioFileModel(name: "Ambient/paradise pad", file: .wav, icon: UIImage(named: "piano")!)
+    }
+    
+    static var lowFlutes: AudioFileModel {
+        return AudioFileModel(name: "Ambient/low flutes", file: .wav, icon: UIImage(named: "flute")!)
+    }
+    
+    static var keys: AudioFileModel {
+        return AudioFileModel(name: "Ambient/keys", file: .wav, icon: UIImage(named: "piano")!)
+    }
+    
+    static var guitar: AudioFileModel {
+        return AudioFileModel(name: "Ambient/guitar", file: .wav, icon: UIImage(named: "guitar-instrument")!)
+    }
+    
+    static var dreamArp: AudioFileModel {
+        return AudioFileModel(name: "Ambient/dream arp", file: .wav, icon: UIImage(named: "piano")!)
+    }
+    
+    static var cowbell: AudioFileModel {
+        return AudioFileModel(name: "Ambient/cowbell", file: .wav, icon: UIImage(named: "cowbell")!)
+    }
+    
+    
+    static var absorb: AudioFileModel {
+        return AudioFileModel(name: "Glitch Drums/absorb", file: .wav, icon: UIImage(named: "glitch")!)
+    }
+    
+    static var crawler: AudioFileModel {
+        return AudioFileModel(name: "Glitch Drums/crawler", file: .wav, icon: UIImage(named: "glitch")!)
+    }
+    
+    static var freezer: AudioFileModel {
+        return AudioFileModel(name: "Glitch Drums/freezer", file: .wav, icon: UIImage(named: "glitch")!)
+    }
+    
+    static var dagger: AudioFileModel {
+        return AudioFileModel(name: "Glitch Drums/dagger", file: .wav, icon: UIImage(named: "glitch")!)
+    }
+    
+    static var smoke: AudioFileModel {
+        return AudioFileModel(name: "Glitch Drums/smoke", file: .wav, icon: UIImage(named: "glitch")!)
+    }
+    
+    static var spurt: AudioFileModel {
+        return AudioFileModel(name: "Glitch Drums/spurt", file: .wav, icon: UIImage(named: "glitch")!)
+    }
+    
+    static var stuffy: AudioFileModel {
+        return AudioFileModel(name: "Glitch Drums/stuffy", file: .wav, icon: UIImage(named: "glitch")!)
+    }
+    
+    static var Bm: AudioFileModel {
+        return AudioFileModel(name: "Guitars/guitar Bm", file: .wav, icon: UIImage(named: "guitar-instrument")!)
+    }
+    
+    static var Cm: AudioFileModel {
+        return AudioFileModel(name: "Guitars/guitar C#m", file: .wav, icon: UIImage(named: "guitar-instrument")!)
+    }
+    
+    static var Em: AudioFileModel {
+        return AudioFileModel(name: "Guitars/guitar Em", file: .wav, icon: UIImage(named: "guitar-instrument")!)
+    }
+    
+    static var Fm: AudioFileModel {
+        return AudioFileModel(name: "Guitars/guitar Fm", file: .wav, icon: UIImage(named: "guitar-instrument")!)
+    }
+    
+    static var Gm: AudioFileModel {
+        return AudioFileModel(name: "Guitars/guitar Gm", file: .wav, icon: UIImage(named: "guitar-instrument")!)
+    }
+    
+    
     static var collection = [
-        "drums" : [AudioFileModel.kick, AudioFileModel.snare, AudioFileModel.hat,
-                   AudioFileModel.clap, AudioFileModel.cymbal],
-        "songs" : [AudioFileModel.style, AudioFileModel.blank],
-        "secret" : [AudioFileModel.synth],
+        "Drums" : [AudioFileModel.kick, AudioFileModel.snare,
+                   AudioFileModel.hat, AudioFileModel.clap,
+                   AudioFileModel.cymbal],
+        "Glitch Drums" : [AudioFileModel.absorb, AudioFileModel.crawler,
+                          AudioFileModel.freezer, AudioFileModel.dagger,
+                          AudioFileModel.smoke, AudioFileModel.spurt,
+                          AudioFileModel.stuffy],
+        "Guitars" : [AudioFileModel.Bm, AudioFileModel.Cm,
+                     AudioFileModel.Em, AudioFileModel.Fm,
+                     AudioFileModel.Gm],
+        "Secret" : [AudioFileModel.synth],
+        "Ambient" : [AudioFileModel.xylo, AudioFileModel.woodblock,
+                     AudioFileModel.stringReverse, AudioFileModel.paradise,
+                     AudioFileModel.lowFlutes, AudioFileModel.keys,
+                     AudioFileModel.guitar, AudioFileModel.dreamArp,
+                     AudioFileModel.cowbell],
     ]
 }

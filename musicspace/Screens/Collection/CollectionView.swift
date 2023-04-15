@@ -11,7 +11,7 @@ import AVFoundation
 struct CollectionView: View {
     //let data = (1...100).map { "Item \($0)" }
     @Environment(\.presentationMode) var presentationMode
-    @State var data = AudioFileModel.collection["drums"]
+    @State var data = AudioFileModel.collection["Drums"]
     var categoriesArray = Array(AudioFileModel.collection.keys.sorted())
     let columns = [GridItem(.adaptive(minimum: 70))]
     var action: (_ file: AudioFileModel) -> Void = {file in }
@@ -49,7 +49,7 @@ struct CollectionView: View {
                     category(name: item)
                 }
             }
-        }//.scrollIndicators(.hidden)
+        }
     }
     
     func category(name: String) -> some View {
@@ -88,7 +88,7 @@ struct CollectionView: View {
     
     
     private func playSound() {
-        guard let selectedFile else {return}
+        guard let selectedFile else { return }
         self.audioSource = AudioSource(
             audio: selectedFile,
             point: CGPoint(
@@ -109,7 +109,6 @@ struct CollectionView: View {
     private func addSound(file: AudioFileModel?) {
         guard let file else {return}
         action(file)
-        //delegate?.addToSpace(file: file)
         self.audioSource.stopAudio()
         self.presentationMode.wrappedValue.dismiss()
     }
