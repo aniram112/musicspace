@@ -279,7 +279,9 @@ class MainViewController: UIViewController, SlidersDelegate, SpaceDelegate {
     
     @objc private func clearSpace() {
         audioSpace.clearSources()
-        //openSaved()
+        pitchSlider.currentValue = 0
+        speedSlider.value = 1
+        volumeSlider.value = 0.5
     }
     
     
