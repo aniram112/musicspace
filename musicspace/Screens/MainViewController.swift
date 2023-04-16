@@ -44,8 +44,7 @@ class MainViewController: UIViewController, SlidersDelegate, SpaceDelegate {
         point: CGPoint(
             x: CGFloat.random(in: 0.1..<0.9),
             y: CGFloat.random(in: 0.1..<0.9)
-        ),
-        range: 0.5
+        )
     )
     
     let audioSource2 = AudioSource(
@@ -53,8 +52,7 @@ class MainViewController: UIViewController, SlidersDelegate, SpaceDelegate {
         point: CGPoint(
             x: CGFloat.random(in: 0.1..<0.9),
             y: CGFloat.random(in: 0.1..<0.9)
-        ),
-        range: 0.5
+        )
     )
     
     override func viewDidLoad() {
@@ -97,8 +95,7 @@ class MainViewController: UIViewController, SlidersDelegate, SpaceDelegate {
             point: CGPoint(
                 x: CGFloat.random(in: 0.1..<0.9),
                 y: CGFloat.random(in: 0.1..<0.9)
-            ),
-            range: 0.5
+            )
         )
         self.audioSpace.addSource(audioSource: audioSource)
         for audio in self.audioSpace.sources {
@@ -114,13 +111,13 @@ class MainViewController: UIViewController, SlidersDelegate, SpaceDelegate {
     }
     
     @objc private func pitchSliderMoved() {
-        audioSpaceView.selectedNode?.source?.pitchControl.pitch = Float(pitchSlider.currentValue * pitchSlider.sliderRange)
+        audioSpaceView.selectedNode?.source?.pitch = Float(pitchSlider.currentValue * pitchSlider.sliderRange)
         //audioSource.pitchControl.pitch = Float(pitchSlider.currentValue * pitchSlider.sliderRange)
     }
     
     @objc private func speedSliderMoved() {
         //audioSource.speedControl.rate = speedSlider.value
-        audioSpaceView.selectedNode?.source?.speedControl.rate = speedSlider.value
+        audioSpaceView.selectedNode?.source?.speed = speedSlider.value
     }
     
     @objc private func volumeSliderMoved() {

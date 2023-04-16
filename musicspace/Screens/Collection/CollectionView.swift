@@ -21,8 +21,7 @@ struct CollectionView: View {
         point: CGPoint(
             x: 0.5,
             y: 0.5
-        ),
-        range: 0.5
+        )
     )
     
     var body: some View {
@@ -94,8 +93,7 @@ struct CollectionView: View {
             point: CGPoint(
                 x: 0.5,
                 y: 0.5
-            ),
-            range: 0.5
+            )
         )
         self.audioSource.runAudio()
         
