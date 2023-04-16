@@ -59,6 +59,7 @@ class MainViewController: UIViewController, SlidersDelegate, SpaceDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        SavedData.loadData()
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bookmark.fill"), style: .plain, target: self, action: #selector(openSaved))
         
         //UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(openSaved))
@@ -261,7 +262,8 @@ class MainViewController: UIViewController, SlidersDelegate, SpaceDelegate {
                     format.dateFormat = "dd.MM.yyyy HH:mm"
                     print(format.string(from: mytime))
                     let newSpace = SavedSpaceModel(name: textField.text ?? "new space", sources: self.audioSpace.sources, date: format.string(from: mytime))
-                    Data.shared.spaces.append(newSpace)
+                    SavedData.shared.spaces.append(newSpace)
+                    SavedData.saveData()
                     
                 }
             )

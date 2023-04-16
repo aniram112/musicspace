@@ -24,7 +24,7 @@ class AudioNodeView: UIView {
     
     var source: AudioSource? {
         didSet {
-            self.imageView.image = self.source?.audio.icon.withRenderingMode(.alwaysTemplate)
+            self.imageView.image = UIImage(named: self.source?.audio.icon ?? "piano")?.withRenderingMode(.alwaysTemplate)
         }
     }
 

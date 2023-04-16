@@ -20,7 +20,7 @@ struct CollectionCellView: View {
                     .fixedSize()
                     .cornerRadius(15)
                 
-                Image(uiImage: file.icon)
+                Image(file.icon)
                     .resizable()
                     .renderingMode(.template)
                     .foregroundColor(.white)

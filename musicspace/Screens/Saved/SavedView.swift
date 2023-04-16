@@ -7,12 +7,10 @@
 
 import SwiftUI
 
-struct SavedSpaceModel {
+struct SavedSpaceModel: Codable {
     var name: String
     var sources: [AudioSource]
     var date: String
-    // TODO
-    
 }
 
 
@@ -23,10 +21,10 @@ struct SavedView: View {
     
     var body: some View {
         List{
-            ForEach(Data.shared.spaces, id: \.name) { item in
+            ForEach(SavedData.shared.spaces, id: \.name) { item in
                 record(model: item).padding(.bottom, 20).swipeActions(edge: .trailing) {
                     Button(role: .destructive) {
-                        //store.delete(message)
+                        delete(item: item)
                     } label: {
                         Label("Delete", systemImage: "trash")
                     }
@@ -37,9 +35,9 @@ struct SavedView: View {
         .background(Color.background.ignoresSafeArea())
     }
     
-    func delete(at offsets: IndexSet) {
-        print("deleting")
-        //users.remove(atOffsets: offsets)
+    func delete(item: SavedSpaceModel) {
+        SavedData.shared.spaces.removeAll(where: {$0.name == item.name})
+        SavedData.saveData()
     }
     
     func record(model: SavedSpaceModel) -> some View {
@@ -61,7 +59,9 @@ struct SavedView: View {
                     .frame(width:50, height: 50)
                     .foregroundColor(.white)
             }.frame(width: 300, height: 80).fixedSize()
-        }.listRowBackground(Color.background)
+        }
+        .listRowBackground(Color.background)
+        .listRowSeparator(.hidden)
         .onTapGesture {
             openSpace(model.sources)
             
@@ -71,32 +71,8 @@ struct SavedView: View {
     }
     
     private func openSpace(_ sources: [AudioSource]) {
-        let audioSource = AudioSource(
-            audio: AudioFileModel.style,
-            point: CGPoint(
-                x: CGFloat.random(in: 0.1..<0.9),
-                y: CGFloat.random(in: 0.1..<0.9)
-            ),
-            range: 0.5
-        )
-        
-        let audioSource2 = AudioSource(
-            audio: AudioFileModel.blank,
-            point: CGPoint(
-                x: CGFloat.random(in: 0.1..<0.9),
-                y: CGFloat.random(in: 0.1..<0.9)
-            ),
-            range: 0.5
-        )
-        
-        audioSource.pitchControl.pitch = -800
-        //audioSource.pitchControl.pitch = -800
-        for i in sources {
-            print("pitch: \(i.pitchControl.pitch)")
-        }
         delegate?.setSpace(newSources: sources)
         self.presentationMode.wrappedValue.dismiss()
-        
     }
 }
 

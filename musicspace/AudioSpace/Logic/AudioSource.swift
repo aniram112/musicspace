@@ -7,7 +7,7 @@
 import UIKit
 import AVFoundation
 
-class AudioSource {
+class AudioSource: Codable {
     let audio: AudioFileModel
     var point: CGPoint
     var range: CGFloat
@@ -37,6 +37,28 @@ class AudioSource {
         self.updateAudioResult()
         self.updateVolume()
     }
+    
+    private enum CodingKeys: String, CodingKey {
+        case audio
+        case point
+        case range
+    }
+    
+    required init(from decoder:Decoder) throws {
+            let values = try decoder.container(keyedBy: CodingKeys.self)
+            audio = try values.decode(AudioFileModel.self, forKey: .audio)
+            point = try values.decode(CGPoint.self, forKey: .point)
+            range = try values.decode(CGFloat.self, forKey: .range)
+            addAnimation = true
+            onRemoveState = false
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+            var container = encoder.container(keyedBy: CodingKeys.self)
+            try container.encode(audio, forKey: .audio)
+            try container.encode(point, forKey: .point)
+            try container.encode(range, forKey: .range)
+        }
 
     func convert(fullSize: CGSize) -> CGPoint {
         return CGPoint(x: fullSize.width * point.x, y: fullSize.height * point.y)
